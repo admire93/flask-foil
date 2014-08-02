@@ -34,7 +34,6 @@ def initialize_foil(config_path):
     for k, v in config['foil'].items():
         upper_config[k.upper()] = v
     for i, p in enumerate(os.walk(structure_path)):
-        print(i)
         write_tmpl(i, p[0], p[1], p[2], upper_config)
 
 
@@ -69,3 +68,4 @@ def run():
             print('foil: error: the following arguments are required: --config')
             return None
         initialize_foil(args.config)
+        print('foil project generated.')
